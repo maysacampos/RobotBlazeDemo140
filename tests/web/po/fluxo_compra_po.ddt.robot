@@ -15,10 +15,10 @@ Fluxo de Compra
 
     Element Text Should Be    ${mensagem_primeira_pagina}    Welcome to the Simple Travel Agency!    
     Tirar Screenshot    1-Página inicial
-    Selecionar Cidade de Origem    ${city_departure}     
-    Selecionar Cidade de Destino    ${city_destination}   
+    Selecionar departure city    ${city_departure}     
+    Selecionar destination city    ${city_destination}   
     Tirar Screenshot    2-Origem e destino
-    Clicar no botao "Find Flight"   
+    Clicar no botao "Find Flights"   
 
     Element Text Should Be    ${mensagem_segunda_pagina}    Flights from ${city_departure} to ${city_destination}:
     Tirar Screenshot    3-Página escolher voo

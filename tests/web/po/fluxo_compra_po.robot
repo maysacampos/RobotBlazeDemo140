@@ -3,13 +3,14 @@ Resource     ../../../pages/base_page.robot
 
 *** Test Cases ***
 Fluxo de compra
+    Element Text Should Be    ${mensagem_primeira_pagina}    Welcome to the Simple Travel Agency!
     Tirar Screenshot    1-Página inicial
     Selecionar departure city    Paris     
     Selecionar destination city    Buenos Aires    
-   Tirar Screenshot    2-Origem e destino
+    Tirar Screenshot    2-Origem e destino
     Clicar no botao "Find Flights"   
     Wait Until Element Is Visible    css=h3  # Aguarda a mensagem de voos
-    Element Text Should Be    ${mensagem_segunda_pagina}    Flights from Boston to London:
+    Element Text Should Be    ${mensagem_segunda_pagina}    Flights from Paris to Buenos Aires: 
     Tirar Screenshot    3-Página escolher voo
     Clicar no botao "Choose This Flight"   
     Wait Until Element Is Visible    css=h2  # Aguarda a mensagem de reserva
