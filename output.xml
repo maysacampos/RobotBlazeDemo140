@@ -1,204 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1 (Python 3.12.2 on win32)" generated="2024-10-09T15:27:17.618713" rpa="false" schemaversion="5">
+<robot generator="Robot 7.1 (Python 3.12.2 on win32)" generated="2024-10-09T16:34:36.796591" rpa="false" schemaversion="5">
 <suite id="s1" name="Fluxo Compra Po" source="c:\ITERASYS\RobotBlazeDemo140\tests\web\po\fluxo_compra_po.robot">
-<test id="s1-t1" name="Fluxo de compra" line="8">
-<kw name="Abrir navegador" owner="base_page" type="SETUP">
-<kw name="Register Keyword To Run On Failure" owner="SeleniumLibrary">
-<msg time="2024-10-09T15:27:18.042890" level="INFO">Tirar Screenshot will be run on failure.</msg>
-<arg>Tirar Screenshot</arg>
-<doc>Sets the keyword to execute, when a SeleniumLibrary keyword fails.</doc>
-<status status="PASS" start="2024-10-09T15:27:18.042890" elapsed="0.017626"/>
-</kw>
-<kw name="Obter Data e hora" owner="base_page">
-<kw name="Get Current Date" owner="DateTime">
-<msg time="2024-10-09T15:27:18.062513" level="INFO">${date} = 2024-10-09 15:27:18.063</msg>
-<var>${date}</var>
-<doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2024-10-09T15:27:18.062513" elapsed="0.001000"/>
-</kw>
-<kw name="Convert Date" owner="DateTime">
-<msg time="2024-10-09T15:27:18.109418" level="INFO">${date} = 2024.10.09_15.27</msg>
-<var>${date}</var>
-<arg>${date}</arg>
-<arg>result_format=%Y.%m.%d_%H.%M</arg>
-<doc>Converts between supported `date formats`.</doc>
-<status status="PASS" start="2024-10-09T15:27:18.063513" elapsed="0.045905"/>
-</kw>
-<kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-10-09T15:27:18.109418" level="INFO">${date} = 2024.10.09_15.27</msg>
-<msg time="2024-10-09T15:27:18.109418" level="INFO">${date} = None</msg>
-<var>${date}</var>
-<arg>${date}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-10-09T15:27:18.109418" elapsed="0.000000"/>
-</kw>
-<status status="PASS" start="2024-10-09T15:27:18.061517" elapsed="0.047901"/>
-</kw>
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-10-09T15:27:18.109418" level="INFO">Opening browser 'Chrome' to base url 'https://www.blazedemo.com/'.</msg>
-<arg>url=${url}</arg>
-<arg>browser=${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-10-09T15:27:18.109418" elapsed="8.851729"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-10-09T15:27:26.961147" elapsed="0.092226"/>
-</kw>
-<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
-<arg>10000ms</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2024-10-09T15:27:27.054372" elapsed="0.012646"/>
-</kw>
-<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
-<arg>css=body:nth-child(2) div.jumbotron:nth-child(2) div.container &gt; h1:nth-child(1)</arg>
-<arg>Welcome to the Simple Travel Agency!</arg>
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="PASS" start="2024-10-09T15:27:27.068011" elapsed="0.060326"/>
-</kw>
-<status status="PASS" start="2024-10-09T15:27:18.042890" elapsed="9.087098"/>
-</kw>
-<kw name="Page Should Contain" owner="SeleniumLibrary">
+<test id="s1-t1" name="Fluxo de compra" line="5">
 <kw name="Tirar Screenshot" owner="base_page">
-<msg time="2024-10-09T15:27:47.215266" level="FAIL">Keyword 'base_page.Tirar Screenshot' expected 1 argument, got 0.</msg>
-<status status="FAIL" start="2024-10-09T15:27:47.215266" elapsed="0.015628">Keyword 'base_page.Tirar Screenshot' expected 1 argument, got 0.</status>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-10-09T16:34:37.229720" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<arg>screenshots/RobotBlazeDemo140/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-10-09T16:34:37.229720" elapsed="0.016861"/>
 </kw>
-<msg time="2024-10-09T15:27:47.230894" level="WARN">Keyword 'Tirar Screenshot' could not be run on failure: Keyword 'base_page.Tirar Screenshot' expected 1 argument, got 0.</msg>
-<msg time="2024-10-09T15:27:47.230894" level="FAIL">Invalid log level 'WELCOME TO THE SIMPLE TRAVEL AGENCY!'.</msg>
-<arg>${mensagem_primeira_pagina}</arg>
-<arg>Welcome to the Simple Travel Agency!</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="FAIL" start="2024-10-09T15:27:27.132381" elapsed="20.114136">Invalid log level 'WELCOME TO THE SIMPLE TRAVEL AGENCY!'.</status>
-</kw>
-<kw name="Tirar Screenshot" owner="base_page">
 <arg>1-Página inicial</arg>
-<status status="NOT RUN" start="2024-10-09T15:27:47.246517" elapsed="0.000000"/>
+<status status="PASS" start="2024-10-09T16:34:37.229720" elapsed="0.016861"/>
 </kw>
-<kw name="Selecionar Cidade de Origem" owner="escolher_destino_page">
-<arg>Boston</arg>
-<status status="NOT RUN" start="2024-10-09T15:27:47.246517" elapsed="0.000000"/>
+<kw name="Selecionar departure city" owner="escolher_destino_page">
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2024-10-09T16:34:37.246581" level="INFO">Selecting options from selection list 'name=fromPort' by value Paris.</msg>
+<msg time="2024-10-09T16:34:37.246581" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2024-10-09T16:34:37.263064" level="FAIL">No browser is open.</msg>
+<arg>${choose_departure_city}</arg>
+<arg>${city_departure}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="FAIL" start="2024-10-09T16:34:37.246581" elapsed="0.025262">No browser is open.</status>
 </kw>
-<kw name="Selecionar Cidade de Destino" owner="escolher_destino_page">
-<arg>London</arg>
-<status status="NOT RUN" start="2024-10-09T15:27:47.246517" elapsed="0.000000"/>
+<arg>Paris</arg>
+<status status="FAIL" start="2024-10-09T16:34:37.246581" elapsed="0.025262">No browser is open.</status>
+</kw>
+<kw name="Selecionar destination city" owner="escolher_destino_page">
+<arg>Buenos Aires</arg>
+<status status="NOT RUN" start="2024-10-09T16:34:37.271843" elapsed="0.000000"/>
 </kw>
 <kw name="Tirar Screenshot" owner="base_page">
 <arg>2-Origem e destino</arg>
-<status status="NOT RUN" start="2024-10-09T15:27:47.252523" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-10-09T16:34:37.279743" elapsed="0.000993"/>
 </kw>
-<kw name="Clicar no botao &quot;Find Flight&quot;" owner="escolher_destino_page">
-<status status="NOT RUN" start="2024-10-09T15:27:47.252523" elapsed="0.000000"/>
+<kw name="Clicar no botao &quot;Find Flights&quot;" owner="escolher_destino_page">
+<status status="NOT RUN" start="2024-10-09T16:34:37.282727" elapsed="0.000000"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>css=h3</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2024-10-09T15:27:47.252523" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-10-09T16:34:37.283726" elapsed="0.001001"/>
 </kw>
 <kw name="Element Text Should Be" owner="SeleniumLibrary">
 <arg>${mensagem_segunda_pagina}</arg>
 <arg>Flights from Boston to London:</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="NOT RUN" start="2024-10-09T15:27:47.252523" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-10-09T16:34:37.285724" elapsed="0.001001"/>
 </kw>
 <kw name="Tirar Screenshot" owner="base_page">
 <arg>3-Página escolher voo</arg>
-<status status="NOT RUN" start="2024-10-09T15:27:47.252523" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-10-09T16:34:37.290721" elapsed="0.000000"/>
 </kw>
 <kw name="Clicar no botao &quot;Choose This Flight&quot;" owner="escolher_voo_page">
-<status status="NOT RUN" start="2024-10-09T15:27:47.252523" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-10-09T16:34:37.292721" elapsed="0.001065"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>css=h2</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2024-10-09T15:27:47.252523" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-10-09T16:34:37.296994" elapsed="0.000000"/>
 </kw>
 <kw name="Element Text Should Be" owner="SeleniumLibrary">
 <arg>${mensagem_terceira_pagina}</arg>
 <arg>Your flight from TLV to SFO has been reserved.</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="NOT RUN" start="2024-10-09T15:27:47.252523" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-10-09T16:34:37.296994" elapsed="0.000000"/>
 </kw>
 <kw name="Tirar Screenshot" owner="base_page">
 <arg>4-Cadastro vazio</arg>
-<status status="NOT RUN" start="2024-10-09T15:27:47.252523" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-10-09T16:34:37.296994" elapsed="0.000000"/>
 </kw>
 <kw name="Preencher campo Name" owner="preencher_cadastro_page">
 <arg>Maysa Campos</arg>
-<status status="NOT RUN" start="2024-10-09T15:27:47.252523" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-10-09T16:34:37.296994" elapsed="0.000000"/>
 </kw>
 <kw name="Preencher campo Adress" owner="preencher_cadastro_page">
 <arg>Av Junho, 445</arg>
-<status status="NOT RUN" start="2024-10-09T15:27:47.252523" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-10-09T16:34:37.296994" elapsed="0.000000"/>
 </kw>
 <kw name="Preencher campo City" owner="preencher_cadastro_page">
 <arg>Salvador</arg>
-<status status="NOT RUN" start="2024-10-09T15:27:47.252523" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-10-09T16:34:37.296994" elapsed="0.000000"/>
 </kw>
 <kw name="Preencher campo State" owner="preencher_cadastro_page">
 <arg>Bahia</arg>
-<status status="NOT RUN" start="2024-10-09T15:27:47.252523" elapsed="0.015630"/>
+<status status="NOT RUN" start="2024-10-09T16:34:37.296994" elapsed="0.000000"/>
 </kw>
 <kw name="Preencher campo Zip Code" owner="preencher_cadastro_page">
 <arg>3550000</arg>
-<status status="NOT RUN" start="2024-10-09T15:27:47.268153" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-10-09T16:34:37.323084" elapsed="0.000999"/>
 </kw>
 <kw name="Preencher Credit Card Number" owner="preencher_cadastro_page">
 <arg>2234805020508585</arg>
-<status status="NOT RUN" start="2024-10-09T15:27:47.268153" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-10-09T16:34:37.347864" elapsed="0.000000"/>
 </kw>
 <kw name="Preencher campo Month" owner="preencher_cadastro_page">
 <arg>10</arg>
-<status status="NOT RUN" start="2024-10-09T15:27:47.268153" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-10-09T16:34:37.347864" elapsed="0.000000"/>
 </kw>
 <kw name="Preencher campo Year" owner="preencher_cadastro_page">
 <arg>2030</arg>
-<status status="NOT RUN" start="2024-10-09T15:27:47.268153" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-10-09T16:34:37.347864" elapsed="0.000000"/>
 </kw>
 <kw name="Preencher campo Name on Card" owner="preencher_cadastro_page">
 <arg>Maysa Campos</arg>
-<status status="NOT RUN" start="2024-10-09T15:27:47.268153" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-10-09T16:34:37.347864" elapsed="0.000000"/>
 </kw>
 <kw name="Clicar em Remember me" owner="preencher_cadastro_page">
-<status status="NOT RUN" start="2024-10-09T15:27:47.268153" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-10-09T16:34:37.347864" elapsed="0.000000"/>
 </kw>
 <kw name="Tirar Screenshot" owner="base_page">
 <arg>5-Cadastro preenchido</arg>
-<status status="NOT RUN" start="2024-10-09T15:27:47.268153" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-10-09T16:34:37.347864" elapsed="0.000000"/>
 </kw>
 <kw name="Clicar no botao &quot;Purchase Flight&quot;" owner="preencher_cadastro_page">
-<status status="NOT RUN" start="2024-10-09T15:27:47.268153" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-10-09T16:34:37.347864" elapsed="0.000000"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>css=h1</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2024-10-09T15:27:47.283777" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-10-09T16:34:37.362077" elapsed="0.000000"/>
 </kw>
 <kw name="Element Text Should Be" owner="SeleniumLibrary">
 <arg>${mensagem_quarta_pagina}</arg>
 <arg>Thank you for your purchase today!</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="NOT RUN" start="2024-10-09T15:27:47.283777" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-10-09T16:34:37.362837" elapsed="0.000000"/>
 </kw>
 <kw name="Tirar Screenshot" owner="base_page">
 <arg>6-Página final</arg>
-<status status="NOT RUN" start="2024-10-09T15:27:47.283777" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-10-09T16:34:37.362837" elapsed="0.000000"/>
 </kw>
-<kw name="Fechar navegador" owner="base_page" type="TEARDOWN">
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-10-09T15:27:47.799696" level="INFO">Slept 500 milliseconds.</msg>
-<arg>500ms</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-10-09T15:27:47.299401" elapsed="0.500295"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-10-09T15:27:47.799696" elapsed="3.055307"/>
-</kw>
-<status status="PASS" start="2024-10-09T15:27:47.283777" elapsed="3.573228"/>
-</kw>
-<status status="FAIL" start="2024-10-09T15:27:18.042890" elapsed="32.817111">Invalid log level 'WELCOME TO THE SIMPLE TRAVEL AGENCY!'.</status>
+<status status="FAIL" start="2024-10-09T16:34:37.229720" elapsed="0.287601">No browser is open.</status>
 </test>
-<status status="FAIL" start="2024-10-09T15:27:17.626389" elapsed="33.243537"/>
+<status status="FAIL" start="2024-10-09T16:34:36.804930" elapsed="0.728020"/>
 </suite>
 <statistics>
 <total>
@@ -211,6 +145,5 @@
 </suite>
 </statistics>
 <errors>
-<msg time="2024-10-09T15:27:47.230894" level="WARN">Keyword 'Tirar Screenshot' could not be run on failure: Keyword 'base_page.Tirar Screenshot' expected 1 argument, got 0.</msg>
 </errors>
 </robot>

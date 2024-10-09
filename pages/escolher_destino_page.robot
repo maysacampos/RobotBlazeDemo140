@@ -11,13 +11,13 @@ ${btn_find_flights}    css=body:nth-child(2) div.container:nth-child(3) form:nth
 
 *** Keywords ***
 
-Selecionar Cidade de Origem   
+Selecionar departure city   
     [Arguments]    ${city_departure}      
     Select From List By Value    ${choose_departure_city}    ${city_departure}  
 
-Selecionar Cidade de Destino
+Selecionar destination city
     [Arguments]    ${city_destination}
     Select From List By Value    ${choose_destination_city}    ${city_destination}      
     
-Clicar no botao "Find Flight"
+Clicar no botao "Find Flights"
     Click Button    ${btn_find_flights}        
