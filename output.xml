@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.2 on win32)" generated="2024-10-09T10:26:16.945815" rpa="false" schemaversion="5">
+<suite id="s1" name="Fluxo Compra" source="C:\ITERASYS\RobotBlazeDemo140\tests\web\simples\fluxo_compra.robot">
+<test id="s1-t1" name="Selecionar Passagem" line="12">
+<kw name="Dado que acesso o site Blaze Demo">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-09T10:26:17.342248" level="INFO">Opening browser 'Chrome' to base url 'https://www.blazedemo.com/'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-09T10:26:17.342248" elapsed="10.248223"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-10-09T10:26:27.591471" elapsed="0.071960"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>5000ms</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2024-10-09T10:26:27.664430" elapsed="0.005996"/>
+</kw>
+<status status="PASS" start="2024-10-09T10:26:17.341248" elapsed="10.330187"/>
+</kw>
+<kw name="Quando seleciono uma Cidade de Partida">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name=fromPort</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-09T10:26:27.678424" elapsed="0.073954"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2024-10-09T10:26:27.752378" level="INFO">Selecting options from selection list 'name=fromPort' by value Paris.</msg>
+<arg>name=fromPort</arg>
+<arg>${cidade}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2024-10-09T10:26:27.752378" elapsed="0.107951"/>
+</kw>
+<arg>Paris</arg>
+<status status="PASS" start="2024-10-09T10:26:27.677424" elapsed="0.183893"/>
+</kw>
+<kw name="E seleciono uma Cidade de Destino">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name=toPort</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-09T10:26:27.862316" elapsed="0.036980"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2024-10-09T10:26:27.900294" level="INFO">Selecting options from selection list 'name=toPort' by value Buenos Aires.</msg>
+<arg>name=toPort</arg>
+<arg>${cidade}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2024-10-09T10:26:27.900294" elapsed="0.056967"/>
+</kw>
+<arg>Buenos Aires</arg>
+<status status="PASS" start="2024-10-09T10:26:27.861317" elapsed="0.095944"/>
+</kw>
+<kw name="Clico no botão Encontre Voo">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-09T10:26:27.958264" level="INFO">Clicking button 'css=input[type="submit"].btn.btn-primary'.</msg>
+<arg>css=input[type="submit"].btn.btn-primary</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T10:26:27.958264" elapsed="0.483172"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<msg time="2024-10-09T10:26:39.108205" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-10-09T10:26:39.108205" level="FAIL">Element 'xpath=//h2[contains(text(), 'Voos disponíveis')]' did not appear in 10 seconds.</msg>
+<arg>xpath=//h2[contains(text(), 'Voos disponíveis')]</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="FAIL" start="2024-10-09T10:26:28.443435" elapsed="10.666768">Element 'xpath=//h2[contains(text(), 'Voos disponíveis')]' did not appear in 10 seconds.</status>
+</kw>
+<status status="FAIL" start="2024-10-09T10:26:27.958264" elapsed="11.151939">Element 'xpath=//h2[contains(text(), 'Voos disponíveis')]' did not appear in 10 seconds.</status>
+</kw>
+<kw name="Entao sou direcionado para a pagina de Voos de Paris para Buenos Aires">
+<status status="NOT RUN" start="2024-10-09T10:26:39.111283" elapsed="0.000000"/>
+</kw>
+<kw name="Quando seleciono a primeira passagem">
+<status status="NOT RUN" start="2024-10-09T10:26:39.112215" elapsed="0.000000"/>
+</kw>
+<kw name="Entao sou direcionado para a pagina da reserva">
+<status status="NOT RUN" start="2024-10-09T10:26:39.112215" elapsed="0.000000"/>
+</kw>
+<kw name="E preencho o campo name">
+<arg>Maysa</arg>
+<status status="NOT RUN" start="2024-10-09T10:26:39.112958" elapsed="0.000000"/>
+</kw>
+<kw name="E preencho o campo endereço">
+<arg>Av Junho 445</arg>
+<status status="NOT RUN" start="2024-10-09T10:26:39.113518" elapsed="0.000000"/>
+</kw>
+<kw name="E preencho o campo cidade">
+<arg>Salvador</arg>
+<status status="NOT RUN" start="2024-10-09T10:26:39.114202" elapsed="0.000000"/>
+</kw>
+<kw name="E preencho o campo estado">
+<arg>Bahia</arg>
+<status status="NOT RUN" start="2024-10-09T10:26:39.114581" elapsed="0.000000"/>
+</kw>
+<kw name="E preencho o campo cep">
+<arg>35500000</arg>
+<status status="NOT RUN" start="2024-10-09T10:26:39.114952" elapsed="0.000000"/>
+</kw>
+<kw name="E preencho o campo cartao">
+<arg>Visa</arg>
+<status status="NOT RUN" start="2024-10-09T10:26:39.115345" elapsed="0.000000"/>
+</kw>
+<kw name="E preencho o campo número do Cartao">
+<arg>2234805020508585</arg>
+<status status="NOT RUN" start="2024-10-09T10:26:39.115736" elapsed="0.000000"/>
+</kw>
+<kw name="E preencho o campo mes">
+<arg>10</arg>
+<status status="NOT RUN" start="2024-10-09T10:26:39.116127" elapsed="0.000000"/>
+</kw>
+<kw name="E preencho o campo adicionar">
+<arg>2030</arg>
+<status status="NOT RUN" start="2024-10-09T10:26:39.116512" elapsed="0.000000"/>
+</kw>
+<kw name="E preencho o campo nome do Cartao">
+<arg>Maysa Campos</arg>
+<status status="NOT RUN" start="2024-10-09T10:26:39.116893" elapsed="0.000000"/>
+</kw>
+<kw name="Quando clico no botao comprar voo">
+<status status="NOT RUN" start="2024-10-09T10:26:39.117616" elapsed="0.000000"/>
+</kw>
+<kw name="Entao sou direcionado para a pagina de confirmação">
+<status status="NOT RUN" start="2024-10-09T10:26:39.118001" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-09T10:26:39.118415" elapsed="2.684890"/>
+</kw>
+<status status="FAIL" start="2024-10-09T10:26:17.340228" elapsed="24.464096">Element 'xpath=//h2[contains(text(), 'Voos disponíveis')]' did not appear in 10 seconds.</status>
+</test>
+<status status="FAIL" start="2024-10-09T10:26:16.947833" elapsed="24.865481"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Fluxo Compra">Fluxo Compra</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

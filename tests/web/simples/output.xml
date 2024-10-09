@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.2 on win32)" generated="2024-10-08T16:11:14.256434" rpa="false" schemaversion="5">
+<suite id="s1" name="Fluxo Compra" source="C:\ITERASYS\RobotBlazeDemo140\tests\web\simples\fluxo_compra.robot">
+<test id="s1-t1" name="Selecionar Passagem" line="13">
+<kw name="Dado que acesso o site BlazeDemo">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-08T16:11:14.928048" level="INFO">Opening browser 'Chrome' to base url 'https://www.blazedemo.com/'.</msg>
+<arg>url=${url}</arg>
+<arg>browser=${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-08T16:11:14.927048" elapsed="29.948829"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-10-08T16:11:44.876876" elapsed="0.065972"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>5000ms</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2024-10-08T16:11:44.943840" elapsed="0.008019"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name=fromPort</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-08T16:11:44.953836" elapsed="0.077955"/>
+</kw>
+<status status="PASS" start="2024-10-08T16:11:14.925050" elapsed="30.107737"/>
+</kw>
+<kw name="Quando seleciono uma Cidade de Partida">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<msg time="2024-10-08T16:11:55.590732" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-10-08T16:11:55.590732" level="FAIL">Element 'css=.form-inline select[name=fromPort]' did not appear in 10 seconds.</msg>
+<arg>css=.form-inline select[name=fromPort]</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="FAIL" start="2024-10-08T16:11:45.039782" elapsed="10.554948">Element 'css=.form-inline select[name=fromPort]' did not appear in 10 seconds.</status>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<arg>css=.form-inline select[name=fromPort]</arg>
+<arg>${cidade}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="NOT RUN" start="2024-10-08T16:11:55.594730" elapsed="0.000000"/>
+</kw>
+<arg>Paris</arg>
+<status status="FAIL" start="2024-10-08T16:11:45.035803" elapsed="10.559927">Element 'css=.form-inline select[name=fromPort]' did not appear in 10 seconds.</status>
+</kw>
+<kw name="E seleciono uma Cidade de Destino">
+<arg>Buenos Aires</arg>
+<status status="NOT RUN" start="2024-10-08T16:11:55.595730" elapsed="0.001000"/>
+</kw>
+<kw name="Clico no botão Encontre Voo">
+<status status="NOT RUN" start="2024-10-08T16:11:55.596730" elapsed="0.000000"/>
+</kw>
+<kw name="Entao sou direcionado para a pagina de voos">
+<status status="NOT RUN" start="2024-10-08T16:11:55.597728" elapsed="0.000000"/>
+</kw>
+<kw name="Quando clico no voo">
+<arg>43</arg>
+<status status="NOT RUN" start="2024-10-08T16:11:55.597728" elapsed="0.000000"/>
+</kw>
+<kw name="Entao sou direcionado para a pagina da reserva">
+<status status="NOT RUN" start="2024-10-08T16:11:55.598728" elapsed="0.000000"/>
+</kw>
+<kw name="E preencho o campo name">
+<arg>Maysa</arg>
+<status status="NOT RUN" start="2024-10-08T16:11:55.598728" elapsed="0.001000"/>
+</kw>
+<kw name="E preencho o campo endereço">
+<arg>Av Junho 445</arg>
+<status status="NOT RUN" start="2024-10-08T16:11:55.599728" elapsed="0.000000"/>
+</kw>
+<kw name="E preencho o campo cidade">
+<arg>Salvador</arg>
+<status status="NOT RUN" start="2024-10-08T16:11:55.600726" elapsed="0.000000"/>
+</kw>
+<kw name="E preencho o campo estado">
+<arg>Bahia</arg>
+<status status="NOT RUN" start="2024-10-08T16:11:55.600726" elapsed="0.000000"/>
+</kw>
+<kw name="E preencho o campo cep">
+<arg>35500000</arg>
+<status status="NOT RUN" start="2024-10-08T16:11:55.601726" elapsed="0.000000"/>
+</kw>
+<kw name="E preencho o campo cartao">
+<arg>Visa</arg>
+<status status="NOT RUN" start="2024-10-08T16:11:55.601726" elapsed="0.000999"/>
+</kw>
+<kw name="E preencho o campo número do Cartao">
+<arg>2234805020508585</arg>
+<status status="NOT RUN" start="2024-10-08T16:11:55.602725" elapsed="0.000999"/>
+</kw>
+<kw name="E preencho o campo mes">
+<arg>10</arg>
+<status status="NOT RUN" start="2024-10-08T16:11:55.603724" elapsed="0.000000"/>
+</kw>
+<kw name="E preencho o campo adicionar">
+<arg>2030</arg>
+<status status="NOT RUN" start="2024-10-08T16:11:55.604726" elapsed="0.000000"/>
+</kw>
+<kw name="E preencho o campo nome do Cartao">
+<arg>Maysa Campos</arg>
+<status status="NOT RUN" start="2024-10-08T16:11:55.604726" elapsed="0.000000"/>
+</kw>
+<kw name="Quando clico no botao comprar voo">
+<status status="NOT RUN" start="2024-10-08T16:11:55.605725" elapsed="0.000000"/>
+</kw>
+<kw name="Entao sou direcionado para a pagina de confirmação">
+<status status="NOT RUN" start="2024-10-08T16:11:55.605725" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-08T16:11:55.606724" elapsed="3.165184"/>
+</kw>
+<status status="FAIL" start="2024-10-08T16:11:14.923051" elapsed="43.849855">Element 'css=.form-inline select[name=fromPort]' did not appear in 10 seconds.</status>
+</test>
+<status status="FAIL" start="2024-10-08T16:11:14.260431" elapsed="44.518473"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Fluxo Compra">Fluxo Compra</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
