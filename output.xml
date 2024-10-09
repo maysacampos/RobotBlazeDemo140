@@ -1,242 +1,216 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1 (Python 3.12.2 on win32)" generated="2024-10-09T12:31:13.335534" rpa="false" schemaversion="5">
-<suite id="s1" name="Fluxo Compra" source="C:\ITERASYS\RobotBlazeDemo140\tests\web\simples\fluxo_compra.robot">
-<test id="s1-t1" name="Selecionar Passagem" line="12">
-<kw name="Dado que acesso o site Blaze Demo">
+<robot generator="Robot 7.1 (Python 3.12.2 on win32)" generated="2024-10-09T15:27:17.618713" rpa="false" schemaversion="5">
+<suite id="s1" name="Fluxo Compra Po" source="c:\ITERASYS\RobotBlazeDemo140\tests\web\po\fluxo_compra_po.robot">
+<test id="s1-t1" name="Fluxo de compra" line="8">
+<kw name="Abrir navegador" owner="base_page" type="SETUP">
+<kw name="Register Keyword To Run On Failure" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:27:18.042890" level="INFO">Tirar Screenshot will be run on failure.</msg>
+<arg>Tirar Screenshot</arg>
+<doc>Sets the keyword to execute, when a SeleniumLibrary keyword fails.</doc>
+<status status="PASS" start="2024-10-09T15:27:18.042890" elapsed="0.017626"/>
+</kw>
+<kw name="Obter Data e hora" owner="base_page">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2024-10-09T15:27:18.062513" level="INFO">${date} = 2024-10-09 15:27:18.063</msg>
+<var>${date}</var>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2024-10-09T15:27:18.062513" elapsed="0.001000"/>
+</kw>
+<kw name="Convert Date" owner="DateTime">
+<msg time="2024-10-09T15:27:18.109418" level="INFO">${date} = 2024.10.09_15.27</msg>
+<var>${date}</var>
+<arg>${date}</arg>
+<arg>result_format=%Y.%m.%d_%H.%M</arg>
+<doc>Converts between supported `date formats`.</doc>
+<status status="PASS" start="2024-10-09T15:27:18.063513" elapsed="0.045905"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-10-09T15:27:18.109418" level="INFO">${date} = 2024.10.09_15.27</msg>
+<msg time="2024-10-09T15:27:18.109418" level="INFO">${date} = None</msg>
+<var>${date}</var>
+<arg>${date}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-10-09T15:27:18.109418" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-10-09T15:27:18.061517" elapsed="0.047901"/>
+</kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-10-09T12:31:24.450633" level="INFO">Opening browser 'Chrome' to base url 'https://www.blazedemo.com/'.</msg>
-<arg>${url}</arg>
-<arg>${browser}</arg>
+<msg time="2024-10-09T15:27:18.109418" level="INFO">Opening browser 'Chrome' to base url 'https://www.blazedemo.com/'.</msg>
+<arg>url=${url}</arg>
+<arg>browser=${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-10-09T12:31:24.450633" elapsed="37.475699"/>
+<status status="PASS" start="2024-10-09T15:27:18.109418" elapsed="8.851729"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-10-09T12:32:01.926332" elapsed="0.151313"/>
+<status status="PASS" start="2024-10-09T15:27:26.961147" elapsed="0.092226"/>
 </kw>
 <kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
-<arg>5000ms</arg>
+<arg>10000ms</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2024-10-09T12:32:02.077645" elapsed="0.181944"/>
+<status status="PASS" start="2024-10-09T15:27:27.054372" elapsed="0.012646"/>
 </kw>
-<status status="PASS" start="2024-10-09T12:31:24.450633" elapsed="37.808956"/>
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>css=body:nth-child(2) div.jumbotron:nth-child(2) div.container &gt; h1:nth-child(1)</arg>
+<arg>Welcome to the Simple Travel Agency!</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2024-10-09T15:27:27.068011" elapsed="0.060326"/>
 </kw>
-<kw name="Quando seleciono uma Cidade de Partida">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>name=fromPort</arg>
-<arg>${timeout}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-09T12:32:02.259589" elapsed="1.720648"/>
+<status status="PASS" start="2024-10-09T15:27:18.042890" elapsed="9.087098"/>
 </kw>
-<kw name="Select From List By Value" owner="SeleniumLibrary">
-<msg time="2024-10-09T12:32:03.980237" level="INFO">Selecting options from selection list 'name=fromPort' by value Paris.</msg>
-<arg>name=fromPort</arg>
-<arg>${cidade}</arg>
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<status status="PASS" start="2024-10-09T12:32:03.980237" elapsed="0.776806"/>
-</kw>
-<arg>Paris</arg>
-<status status="PASS" start="2024-10-09T12:32:02.259589" elapsed="2.497454"/>
-</kw>
-<kw name="E seleciono uma Cidade de Destino">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>name=toPort</arg>
-<arg>${timeout}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-09T12:32:04.757043" elapsed="0.058541"/>
-</kw>
-<kw name="Select From List By Value" owner="SeleniumLibrary">
-<msg time="2024-10-09T12:32:04.816574" level="INFO">Selecting options from selection list 'name=toPort' by value Buenos Aires.</msg>
-<arg>name=toPort</arg>
-<arg>${cidade}</arg>
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<status status="PASS" start="2024-10-09T12:32:04.815584" elapsed="0.043841"/>
-</kw>
-<arg>Buenos Aires</arg>
-<status status="PASS" start="2024-10-09T12:32:04.757043" elapsed="0.102382"/>
-</kw>
-<kw name="Clico no botão Encontre Voo">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-10-09T12:32:04.859425" level="INFO">Clicking button 'css=input[type="submit"].btn.btn-primary'.</msg>
-<arg>css=input[type="submit"].btn.btn-primary</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-09T12:32:04.859425" elapsed="1.913994"/>
-</kw>
-<status status="PASS" start="2024-10-09T12:32:04.859425" elapsed="1.913994"/>
-</kw>
-<kw name="Entao sou direcionado para a pagina de Voos de Paris para Buenos Aires">
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2024-10-09T12:32:06.860154" level="INFO">Current page contains text 'Flights from Paris to Buenos Aires:'.</msg>
-<arg>Flights from Paris to Buenos Aires:</arg>
+<kw name="Tirar Screenshot" owner="base_page">
+<msg time="2024-10-09T15:27:47.215266" level="FAIL">Keyword 'base_page.Tirar Screenshot' expected 1 argument, got 0.</msg>
+<status status="FAIL" start="2024-10-09T15:27:47.215266" elapsed="0.015628">Keyword 'base_page.Tirar Screenshot' expected 1 argument, got 0.</status>
+</kw>
+<msg time="2024-10-09T15:27:47.230894" level="WARN">Keyword 'Tirar Screenshot' could not be run on failure: Keyword 'base_page.Tirar Screenshot' expected 1 argument, got 0.</msg>
+<msg time="2024-10-09T15:27:47.230894" level="FAIL">Invalid log level 'WELCOME TO THE SIMPLE TRAVEL AGENCY!'.</msg>
+<arg>${mensagem_primeira_pagina}</arg>
+<arg>Welcome to the Simple Travel Agency!</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2024-10-09T12:32:06.777109" elapsed="0.083045"/>
+<status status="FAIL" start="2024-10-09T15:27:27.132381" elapsed="20.114136">Invalid log level 'WELCOME TO THE SIMPLE TRAVEL AGENCY!'.</status>
 </kw>
-<status status="PASS" start="2024-10-09T12:32:06.776413" elapsed="0.083741"/>
+<kw name="Tirar Screenshot" owner="base_page">
+<arg>1-Página inicial</arg>
+<status status="NOT RUN" start="2024-10-09T15:27:47.246517" elapsed="0.000000"/>
 </kw>
-<kw name="Quando seleciono a primeira passagem">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-10-09T12:32:06.860154" level="INFO">Clicking element 'xpath=/html/body/div[2]/table/tbody/tr[1]/td[1]/input'.</msg>
-<arg>xpath=/html/body/div[2]/table/tbody/tr[1]/td[1]/input</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-09T12:32:06.860154" elapsed="1.452983"/>
+<kw name="Selecionar Cidade de Origem" owner="escolher_destino_page">
+<arg>Boston</arg>
+<status status="NOT RUN" start="2024-10-09T15:27:47.246517" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-10-09T12:32:06.860154" elapsed="1.452983"/>
+<kw name="Selecionar Cidade de Destino" owner="escolher_destino_page">
+<arg>London</arg>
+<status status="NOT RUN" start="2024-10-09T15:27:47.246517" elapsed="0.000000"/>
 </kw>
-<kw name="Entao sou direcionado para a pagina da reserva">
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2024-10-09T12:32:08.349734" level="INFO">Current page contains text 'Your flight from TLV to SFO has been reserved.'.</msg>
+<kw name="Tirar Screenshot" owner="base_page">
+<arg>2-Origem e destino</arg>
+<status status="NOT RUN" start="2024-10-09T15:27:47.252523" elapsed="0.000000"/>
+</kw>
+<kw name="Clicar no botao &quot;Find Flight&quot;" owner="escolher_destino_page">
+<status status="NOT RUN" start="2024-10-09T15:27:47.252523" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=h3</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-10-09T15:27:47.252523" elapsed="0.000000"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>${mensagem_segunda_pagina}</arg>
+<arg>Flights from Boston to London:</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2024-10-09T15:27:47.252523" elapsed="0.000000"/>
+</kw>
+<kw name="Tirar Screenshot" owner="base_page">
+<arg>3-Página escolher voo</arg>
+<status status="NOT RUN" start="2024-10-09T15:27:47.252523" elapsed="0.000000"/>
+</kw>
+<kw name="Clicar no botao &quot;Choose This Flight&quot;" owner="escolher_voo_page">
+<status status="NOT RUN" start="2024-10-09T15:27:47.252523" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=h2</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-10-09T15:27:47.252523" elapsed="0.000000"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>${mensagem_terceira_pagina}</arg>
 <arg>Your flight from TLV to SFO has been reserved.</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2024-10-09T12:32:08.315135" elapsed="0.034599"/>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2024-10-09T15:27:47.252523" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-10-09T12:32:08.314139" elapsed="0.035595"/>
+<kw name="Tirar Screenshot" owner="base_page">
+<arg>4-Cadastro vazio</arg>
+<status status="NOT RUN" start="2024-10-09T15:27:47.252523" elapsed="0.000000"/>
 </kw>
-<kw name="E preencho o campo name">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-10-09T12:32:08.349734" level="INFO">Typing text 'Maysa' into text field 'name=inputName'.</msg>
-<arg>name=inputName</arg>
-<arg>${name}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-09T12:32:08.349734" elapsed="0.658526"/>
-</kw>
-<arg>Maysa</arg>
-<status status="PASS" start="2024-10-09T12:32:08.349734" elapsed="0.658526"/>
-</kw>
-<kw name="E preencho o campo endereço">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-10-09T12:32:09.008260" level="INFO">Typing text 'Av Junho 445' into text field 'name=address'.</msg>
-<arg>name=address</arg>
-<arg>${endereco}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-09T12:32:09.008260" elapsed="0.200347"/>
-</kw>
-<arg>Av Junho 445</arg>
-<status status="PASS" start="2024-10-09T12:32:09.008260" elapsed="0.200347"/>
-</kw>
-<kw name="E preencho o campo cidade">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-10-09T12:32:09.208607" level="INFO">Typing text 'Salvador' into text field 'name=city'.</msg>
-<arg>name=city</arg>
-<arg>${cidade}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-09T12:32:09.208607" elapsed="0.216662"/>
-</kw>
-<arg>Salvador</arg>
-<status status="PASS" start="2024-10-09T12:32:09.208607" elapsed="0.216662"/>
-</kw>
-<kw name="E preencho o campo estado">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-10-09T12:32:09.425269" level="INFO">Typing text 'Bahia' into text field 'name=state'.</msg>
-<arg>name=state</arg>
-<arg>${estado}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-09T12:32:09.425269" elapsed="0.193047"/>
-</kw>
-<arg>Bahia</arg>
-<status status="PASS" start="2024-10-09T12:32:09.425269" elapsed="0.193047"/>
-</kw>
-<kw name="E preencho o campo cep">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-10-09T12:32:09.618316" level="INFO">Typing text '35500000' into text field 'name=zipCode'.</msg>
-<arg>name=zipCode</arg>
-<arg>${cep}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-09T12:32:09.618316" elapsed="0.202587"/>
-</kw>
-<arg>35500000</arg>
-<status status="PASS" start="2024-10-09T12:32:09.618316" elapsed="0.202587"/>
-</kw>
-<kw name="E preencho o campo cartao">
-<kw name="Select From List By Value" owner="SeleniumLibrary">
-<msg time="2024-10-09T12:32:09.820903" level="INFO">Selecting options from selection list 'name=cardType' by value visa.</msg>
-<arg>name=cardType</arg>
-<arg>${cartao}</arg>
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<status status="PASS" start="2024-10-09T12:32:09.820903" elapsed="0.079667"/>
-</kw>
-<arg>visa</arg>
-<status status="PASS" start="2024-10-09T12:32:09.820903" elapsed="0.079667"/>
-</kw>
-<kw name="E preencho o campo número do Cartao">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-10-09T12:32:09.901572" level="INFO">Typing text '2234805020508585' into text field 'name=creditCardNumber'.</msg>
-<arg>name=creditCardNumber</arg>
-<arg>${numero}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-09T12:32:09.901572" elapsed="0.181913"/>
-</kw>
-<arg>2234805020508585</arg>
-<status status="PASS" start="2024-10-09T12:32:09.901572" elapsed="0.181913"/>
-</kw>
-<kw name="E preencho o campo mes">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-10-09T12:32:10.083485" level="INFO">Typing text '10' into text field 'name=creditCardMonth'.</msg>
-<arg>name=creditCardMonth</arg>
-<arg>${mes}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-09T12:32:10.083485" elapsed="0.179731"/>
-</kw>
-<arg>10</arg>
-<status status="PASS" start="2024-10-09T12:32:10.083485" elapsed="0.179731"/>
-</kw>
-<kw name="E preencho o campo adicionar">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-10-09T12:32:10.263216" level="INFO">Typing text '2030' into text field 'name=creditCardYear'.</msg>
-<arg>name=creditCardYear</arg>
-<arg>${ano}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-09T12:32:10.263216" elapsed="0.180391"/>
-</kw>
-<arg>2030</arg>
-<status status="PASS" start="2024-10-09T12:32:10.263216" elapsed="0.180391"/>
-</kw>
-<kw name="E preencho o campo nome do Cartao">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-10-09T12:32:10.460315" level="INFO">Typing text 'Maysa Campos' into text field 'name=creditCardNumber'.</msg>
-<arg>name=creditCardNumber</arg>
-<arg>${nome}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-09T12:32:10.460315" elapsed="0.231977"/>
-</kw>
+<kw name="Preencher campo Name" owner="preencher_cadastro_page">
 <arg>Maysa Campos</arg>
-<status status="PASS" start="2024-10-09T12:32:10.459010" elapsed="0.233282"/>
+<status status="NOT RUN" start="2024-10-09T15:27:47.252523" elapsed="0.000000"/>
 </kw>
-<kw name="Quando clico no botao comprar voo">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-10-09T12:32:10.693692" level="INFO">Clicking button 'xpath=//input[@value='Purchase Flight']'.</msg>
-<arg>xpath=//input[@value='Purchase Flight']</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-09T12:32:10.693692" elapsed="1.725380"/>
+<kw name="Preencher campo Adress" owner="preencher_cadastro_page">
+<arg>Av Junho, 445</arg>
+<status status="NOT RUN" start="2024-10-09T15:27:47.252523" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-10-09T12:32:10.693692" elapsed="1.731690"/>
+<kw name="Preencher campo City" owner="preencher_cadastro_page">
+<arg>Salvador</arg>
+<status status="NOT RUN" start="2024-10-09T15:27:47.252523" elapsed="0.000000"/>
 </kw>
-<kw name="Entao sou direcionado para a pagina de confirmação">
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2024-10-09T12:32:12.462796" level="INFO">Current page contains text 'Thank you for your purchase'.</msg>
-<arg>Thank you for your purchase</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2024-10-09T12:32:12.434150" elapsed="0.028646"/>
+<kw name="Preencher campo State" owner="preencher_cadastro_page">
+<arg>Bahia</arg>
+<status status="NOT RUN" start="2024-10-09T15:27:47.252523" elapsed="0.015630"/>
 </kw>
-<status status="PASS" start="2024-10-09T12:32:12.433148" elapsed="0.029648"/>
+<kw name="Preencher campo Zip Code" owner="preencher_cadastro_page">
+<arg>3550000</arg>
+<status status="NOT RUN" start="2024-10-09T15:27:47.268153" elapsed="0.000000"/>
 </kw>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<kw name="Preencher Credit Card Number" owner="preencher_cadastro_page">
+<arg>2234805020508585</arg>
+<status status="NOT RUN" start="2024-10-09T15:27:47.268153" elapsed="0.000000"/>
+</kw>
+<kw name="Preencher campo Month" owner="preencher_cadastro_page">
+<arg>10</arg>
+<status status="NOT RUN" start="2024-10-09T15:27:47.268153" elapsed="0.000000"/>
+</kw>
+<kw name="Preencher campo Year" owner="preencher_cadastro_page">
+<arg>2030</arg>
+<status status="NOT RUN" start="2024-10-09T15:27:47.268153" elapsed="0.000000"/>
+</kw>
+<kw name="Preencher campo Name on Card" owner="preencher_cadastro_page">
+<arg>Maysa Campos</arg>
+<status status="NOT RUN" start="2024-10-09T15:27:47.268153" elapsed="0.000000"/>
+</kw>
+<kw name="Clicar em Remember me" owner="preencher_cadastro_page">
+<status status="NOT RUN" start="2024-10-09T15:27:47.268153" elapsed="0.000000"/>
+</kw>
+<kw name="Tirar Screenshot" owner="base_page">
+<arg>5-Cadastro preenchido</arg>
+<status status="NOT RUN" start="2024-10-09T15:27:47.268153" elapsed="0.000000"/>
+</kw>
+<kw name="Clicar no botao &quot;Purchase Flight&quot;" owner="preencher_cadastro_page">
+<status status="NOT RUN" start="2024-10-09T15:27:47.268153" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=h1</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-10-09T15:27:47.283777" elapsed="0.000000"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>${mensagem_quarta_pagina}</arg>
+<arg>Thank you for your purchase today!</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2024-10-09T15:27:47.283777" elapsed="0.000000"/>
+</kw>
+<kw name="Tirar Screenshot" owner="base_page">
+<arg>6-Página final</arg>
+<status status="NOT RUN" start="2024-10-09T15:27:47.283777" elapsed="0.000000"/>
+</kw>
+<kw name="Fechar navegador" owner="base_page" type="TEARDOWN">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-09T15:27:47.799696" level="INFO">Slept 500 milliseconds.</msg>
+<arg>500ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-09T15:27:47.299401" elapsed="0.500295"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-10-09T12:32:12.462796" elapsed="3.545732"/>
+<status status="PASS" start="2024-10-09T15:27:47.799696" elapsed="3.055307"/>
 </kw>
-<status status="PASS" start="2024-10-09T12:31:24.450633" elapsed="51.557895"/>
+<status status="PASS" start="2024-10-09T15:27:47.283777" elapsed="3.573228"/>
+</kw>
+<status status="FAIL" start="2024-10-09T15:27:18.042890" elapsed="32.817111">Invalid log level 'WELCOME TO THE SIMPLE TRAVEL AGENCY!'.</status>
 </test>
-<status status="PASS" start="2024-10-09T12:31:13.366781" elapsed="62.641747"/>
+<status status="FAIL" start="2024-10-09T15:27:17.626389" elapsed="33.243537"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Fluxo Compra">Fluxo Compra</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Fluxo Compra Po">Fluxo Compra Po</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2024-10-09T15:27:47.230894" level="WARN">Keyword 'Tirar Screenshot' could not be run on failure: Keyword 'base_page.Tirar Screenshot' expected 1 argument, got 0.</msg>
 </errors>
 </robot>
