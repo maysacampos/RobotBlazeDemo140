@@ -24,7 +24,7 @@ Fluxo de compra
     Preencher campo Zip Code    3550000 
     Preencher Credit Card Number    2234805020508585
     Preencher campo Month    10 
-    Preencher campo Year    2026
+    Preencher campo Year    2030
     Preencher campo Name on Card    Maysa Campos 
     Clicar em Remember me    
     Tirar Screenshot    5-Cadastro preenchido

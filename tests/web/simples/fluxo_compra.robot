@@ -22,7 +22,7 @@ Selecionar Passagem
     E preencho o campo cidade    Salvador
     E preencho o campo estado    Bahia
     E preencho o campo cep    35500000
-    E preencho o campo cartao    Visa
+    E preencho o campo cartao    visa
     E preencho o campo número do Cartao    2234805020508585
     E preencho o campo mes    10
     E preencho o campo adicionar    2030    
@@ -48,20 +48,21 @@ E seleciono uma Cidade de Destino
 
 Clico no botão Encontre Voo
     Click Button    css=input[type="submit"].btn.btn-primary
-    Wait Until Page Contains Element    xpath=//h2[contains(text(), 'Voos disponíveis')]    ${timeout}
+    #Wait Until Page Contains Element    xpath=//h2[contains(text(), 'Voos disponíveis')]    ${timeout}
+
 
 Entao sou direcionado para a pagina de Voos de Paris para Buenos Aires
-    Page Should Contain    Voos de Paris para Buenos Aires
+    Page Should Contain    Flights from Paris to Buenos Aires:
 
 Quando seleciono a primeira passagem
     Click Element    xpath=/html/body/div[2]/table/tbody/tr[1]/td[1]/input
 
 Entao sou direcionado para a pagina da reserva
-    Page Should Contain    Reserve
+    Page Should Contain    Your flight from TLV to SFO has been reserved.
 
 E preencho o campo name
     [Arguments]    ${name}
-    Input Text    name=name    ${name}
+    Input Text    name=inputName    ${name}
 
 E preencho o campo endereço
     [Arguments]    ${endereco}
@@ -77,7 +78,7 @@ E preencho o campo estado
 
 E preencho o campo cep
     [Arguments]    ${cep}
-    Input Text    name=zip    ${cep}
+    Input Text    name=zipCode    ${cep}
 
 E preencho o campo cartao
     [Arguments]    ${cartao}
@@ -97,7 +98,7 @@ E preencho o campo adicionar
 
 E preencho o campo nome do Cartao
     [Arguments]    ${nome}
-    Input Text    name=creditCardName    ${nome}
+    Input Text    name=creditCardNumber    ${nome}
 
 Quando clico no botao comprar voo
     Click Button    xpath=//input[@value='Purchase Flight']
